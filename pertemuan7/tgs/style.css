@@ -1,0 +1,65 @@
+.container-latihan {
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+
+.box-abu {
+    background-color: skyblue;
+    padding: 15px;
+    margin-bottom: 20px;
+}
+
+.label-putih {
+    background-color: white;
+    padding: 8px 15px;
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+
+.identitas {
+    font-weight: 700;
+}
+
+.nama-mhs {
+    float: left;
+}
+
+.nim-mhs {
+    float: right;
+}
+
+.identitas::after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+.box-kiri {
+    height: 380px;
+}
+
+.box-kanan-atas,
+.box-kanan-bawah {
+    height: 180px;
+}
+
+.footer-latihan {
+    text-align: center;
+    font-weight: 700;
+}
+
+@media (max-width: 575.98px) {
+    .box-kiri,
+    .box-kanan-atas,
+    .box-kanan-bawah {
+        height: auto;
+    }
+
+    .nama-mhs,
+    .nim-mhs {
+        float: none;
+        display: block;
+        text-align: center;
+        margin-bottom: 10px;
+    }
+}

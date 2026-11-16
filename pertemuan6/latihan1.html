@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kalkulator Sederhana</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 100vh;
+            margin: 0;
+        }
+
+        .kalkulator {
+            background-color: white;
+            padding: 25px;
+            border-radius: 10px;
+            width: 300px;
+            box-shadow: 0 4px 10px #cccccc;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+            box-sizing: border-box;
+        }
+
+        button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #0056b3;
+        }
+
+        #hasil {
+            margin-top: 15px;
+            font-weight: bold;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="kalkulator">
+        <h2>Kalkulator Sederhana</h2>
+        <input type="number" id="angka1" placeholder="Masukkan angka pertama">
+        <input type="number" id="angka2" placeholder="Masukkan angka kedua">
+        <select id="operator">
+            <option value="+">Penjumlahan (+)</option>
+            <option value="-">Pengurangan (-)</option>
+            <option value="*">Perkalian (*)</option>
+            <option value="/">Pembagian (/)</option>
+        </select>
+        <button onclick="hitung()">Hitung</button>
+        <p id="hasil">Hasil: -</p>
+    </div>
+
+    <script>
+        function hitung() {
+            let a = document.getElementById("angka1").value;
+            let b = document.getElementById("angka2").value;
+            let operator = document.getElementById("operator").value;
+            let hasil;
+
+            if (a === "" || b === "") {
+                document.getElementById("hasil").innerHTML =
+                    "Masukkan kedua angka terlebih dahulu!";
+                return;
+            }
+
+            a = Number(a);
+            b = Number(b);
+            if (operator === "+") {
+                hasil = a + b;
+            } else if (operator === "-") {
+                hasil = a - b;
+            } else if (operator === "*") {
+                hasil = a * b;
+            } else if (operator === "/") {
+                if (b === 0) {
+                    document.getElementById("hasil").innerHTML =
+                        "Tidak bisa dibagi dengan nol!";
+                    return;
+                }
+                hasil = a / b;
+            }
+            document.getElementById("hasil").innerHTML =
+                "Hasil: " + hasil;
+        }
+    </script>
+</body>
+</html>
